@@ -1,4 +1,4 @@
-package dev.vissa.nevermissue.client;
+package dev.vissa.client;
 
 import java.io.IOException;
 import javafx.fxml.FXML;

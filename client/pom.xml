@@ -6,22 +6,24 @@
     <groupId>dev.vissa</groupId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
+    <groupId>dev.vissa</groupId>
     <artifactId>client</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>23</version>
+            <version>13</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>23</version>
+            <version>13</version>
         </dependency>
     </dependencies>
     <build>
@@ -37,14 +39,14 @@
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
-                <version>0.0.8</version>
+                <version>0.0.6</version>
                 <executions>
                     <execution>
                         <!-- Default configuration for running -->
                         <!-- Usage: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>dev.vissa.nevermissue.client.App</mainClass>
+                            <mainClass>dev.vissa.client.App</mainClass>
                         </configuration>
                     </execution>
                 </executions>

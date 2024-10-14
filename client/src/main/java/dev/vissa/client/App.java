@@ -1,4 +1,4 @@
-package dev.vissa.nevermissue.client;
+package dev.vissa.client;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
