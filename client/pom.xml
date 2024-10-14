@@ -46,7 +46,7 @@
                         <!-- Usage: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>dev.vissa.client.App</mainClass>
+                            <mainClass>dev.vissa.nevermissue.client.App</mainClass>
                         </configuration>
                     </execution>
                 </executions>
