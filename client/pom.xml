@@ -6,9 +6,7 @@
     <groupId>dev.vissa</groupId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-    <groupId>dev.vissa</groupId>
     <artifactId>client</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
@@ -25,6 +23,11 @@
             <artifactId>javafx-fxml</artifactId>
             <version>13</version>
         </dependency>
+        <dependency>
+	      <groupId>dev.vissa</groupId>
+	      <artifactId>shared</artifactId>
+	      <version>0.0.1-SNAPSHOT</version>
+	    </dependency>
     </dependencies>
     <build>
         <plugins>
