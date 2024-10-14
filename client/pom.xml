@@ -27,12 +27,6 @@
       <artifactId>shared</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-swing -->
-	<dependency>
-	    <groupId>org.openjfx</groupId>
-	    <artifactId>javafx-swing</artifactId>
-	    <version>21.0.4</version>
-	</dependency>
   </dependencies>
 
 </project>
