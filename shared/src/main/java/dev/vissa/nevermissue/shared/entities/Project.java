@@ -8,16 +8,35 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.OneToMany;
+
+@Entity
 @XmlRootElement(name = "project")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Project {
 	//private Integer authorID;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "issueID")
 	private Integer projectID;
+	@Column(name = "displayName")
 	private String name;
+	@Column(name = "displayDescription")
 	private String description;
 	
 	@XmlElementWrapper(name = "issues")
 	@XmlElement(name = "issue")
+	@OneToMany
+	@JoinTable(
+			name = "PROJECT_ISSUES",
+			joinColumns = @JoinColumn(name = ""))
 	private List<Issue> issues;
 
 	public Project(Integer projectID, String name, String description) {
