@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -24,7 +25,7 @@ public class App extends Application {
     
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        scene = new Scene(loadFXML("login"), 640, 480);
         String css = CSSResources.class.getResource("application.css").toExternalForm();
         scene.getStylesheets().add(css);
         stage.setScene(scene);
@@ -33,7 +34,7 @@ public class App extends Application {
         stage.show();
     }
 
-    public static void setRoot(String fxml) throws IOException {
+    public static void setRoot(String fxml) throws IOException {	
         scene.setRoot(loadFXML(fxml));
     }
 
@@ -44,6 +45,16 @@ public class App extends Application {
 
     public static void main(String[] args) {
         launch();
+    }
+    
+    private static String DARK_CSS = CSSResources.class.getResource("darkmode.css").toExternalForm();
+    
+    public static void changeStyle(boolean dark) {
+    	scene.getStylesheets().remove(DARK_CSS);
+    	if (dark) {
+    		scene.getStylesheets().add(DARK_CSS);
+    	}
+    	
     }
 
 }

@@ -1,5 +1,7 @@
 package dev.vissa.nevermissue.client.controller;
 
-public class LoginController {
+import javafx.fxml.FXML;
 
+public class LoginController extends MenuBarController{
+	
 }

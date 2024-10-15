@@ -1,0 +1,11 @@
+.root {
+    -fx-base: #e2dcda;
+}
+
+.tone1 {
+	-fx-background-color: #dbd3d1;
+}
+
+.tone2 {
+	-fx-background-color: #d4cac8;
+}
