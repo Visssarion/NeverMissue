@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import dev.vissa.nevermissue.client.scenes.css.CSSResources;
 import dev.vissa.nevermissue.client.scenes.images.ImageResources;
 
 /**
@@ -16,13 +17,15 @@ import dev.vissa.nevermissue.client.scenes.images.ImageResources;
  */
 public class App extends Application {
 
-	public final static String TITLE = "NeverMissue";
+	private final static String TITLE = "NeverMissue";
 	
     private static Scene scene;
-
+    
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("primary"), 640, 480);
+        String css = CSSResources.class.getResource("application.css").toExternalForm();
+        scene.getStylesheets().add(css);
         stage.setScene(scene);
         stage.setTitle(TITLE);
         stage.getIcons().add(new Image(ImageResources.class.getResourceAsStream("logo.png")));
