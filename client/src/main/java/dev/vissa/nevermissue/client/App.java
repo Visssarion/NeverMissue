@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 import dev.vissa.nevermissue.client.scenes.css.CSSResources;
+import dev.vissa.nevermissue.client.scenes.fxml.FXMLResources;
 import dev.vissa.nevermissue.client.scenes.images.ImageResources;
 
 /**
@@ -32,12 +33,12 @@ public class App extends Application {
         stage.show();
     }
 
-    static void setRoot(String fxml) throws IOException {
+    public static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(FXMLResources.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
 

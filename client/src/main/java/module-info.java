@@ -4,4 +4,5 @@ module dev.vissa.nevermissue.client {
 
     opens dev.vissa.nevermissue.client to javafx.fxml;
     exports dev.vissa.nevermissue.client;
+    opens dev.vissa.nevermissue.client.controller to javafx.fxml;
 }

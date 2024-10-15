@@ -1,6 +1,8 @@
-package dev.vissa.nevermissue.client;
+package dev.vissa.nevermissue.client.controller;
 
 import java.io.IOException;
+
+import dev.vissa.nevermissue.client.App;
 import javafx.fxml.FXML;
 
 public class PrimaryController {
