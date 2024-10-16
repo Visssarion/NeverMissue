@@ -1,12 +1,6 @@
 package dev.vissa.nevermissue.shared.entities;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
 
-
-@XmlRootElement(name = "task")
-@XmlAccessorType(XmlAccessType.FIELD)
 public class Task {
 	private String name;
 	private Integer priority;
