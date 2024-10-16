@@ -7,6 +7,11 @@
   </parent>
   <artifactId>shared</artifactId>
   <name>Shared Library</name>
+  <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+    </properties>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
