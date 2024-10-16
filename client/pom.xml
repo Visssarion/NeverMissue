@@ -23,11 +23,13 @@
             <artifactId>javafx-fxml</artifactId>
             <version>23</version>
         </dependency>
+        <!-- 
         <dependency>
 	      <groupId>dev.vissa</groupId>
 	      <artifactId>shared</artifactId>
 	      <version>0.0.1-SNAPSHOT</version>
 	    </dependency>
+	    -->
     </dependencies>
     <build>
         <plugins>
@@ -54,6 +56,24 @@
                     </execution>
                 </executions>
             </plugin>
+            
+            <plugin>
+			    <groupId>io.github.fvarrui</groupId>
+			    <artifactId>javapackager</artifactId>
+			    <version>1.7.6</version>
+			    <executions>
+			        <execution>
+			            <phase>package</phase>
+			            <goals>
+			                <goal>package</goal>
+			            </goals>
+			            <configuration>
+			                <mainClass>dev.vissa.nevermissue.client.App</mainClass>
+			                <bundleJre>true</bundleJre>
+			            </configuration>
+			        </execution>
+			    </executions>
+			</plugin>
         </plugins>
     </build>
 </project>
