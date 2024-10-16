@@ -1,13 +1,5 @@
 package dev.vissa.nevermissue.shared.entities;
 
-import java.util.List;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
-import javax.xml.bind.annotation.XmlRootElement;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,8 +8,6 @@ import jakarta.persistence.Id;
 
 
 @Entity
-@XmlRootElement(name = "issue")
-@XmlAccessorType(XmlAccessType.FIELD)
 public class Issue {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,8 +20,6 @@ public class Issue {
 	@Column(name = "displayDescription")
 	private String description;
 	/*
-	@XmlElementWrapper(name = "tasks")
-	@XmlElement(name = "task")
 	private List<Task> tasks;*/
 	
 	public Issue(String name, String description) {
