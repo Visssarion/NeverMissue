@@ -32,3 +32,7 @@
 .tone2 {
 	-fx-background-color: #372c2b;
 }
+
+.error {
+	-fx-text-fill: #FF1111;
+}

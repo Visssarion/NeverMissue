@@ -18,16 +18,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.vissa.nevermissue.client.controller.LoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="280.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.vissa.nevermissue.client.controller.LoginController">
    <center>
       <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <center>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-padding: 8;" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER" prefHeight="0.0" prefWidth="600.0" style="-fx-padding: 8;" BorderPane.alignment="CENTER">
                <children>
                   <GridPane alignment="CENTER" hgap="8.0" style="-fx-padding: 8;" vgap="8.0">
                     <columnConstraints>
-                      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="283.0" minWidth="10.0" prefWidth="158.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="418.0" minWidth="10.0" prefWidth="418.0" />
+                      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="283.0" minWidth="10.0" prefWidth="87.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="473.0" minWidth="10.0" prefWidth="473.0" />
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints vgrow="SOMETIMES" />
@@ -39,7 +39,7 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <TextField GridPane.columnIndex="1">
+                        <TextField fx:id="loginField" GridPane.columnIndex="1">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -49,13 +49,14 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </PasswordField>
                      </children>
                   </GridPane>
+                  <Label fx:id="errorField" styleClass="error" textAlignment="CENTER" textFill="RED" />
                </children>
             </VBox>
          </center>
@@ -82,7 +83,7 @@
          <bottom>
             <BorderPane prefHeight="0.0" prefWidth="600.0" style="-fx-padding: 8;" styleClass="tone1" BorderPane.alignment="CENTER">
                <right>
-                  <Button mnemonicParsing="false" text="Войти" BorderPane.alignment="CENTER">
+                  <Button mnemonicParsing="false" onAction="#login" text="Войти" BorderPane.alignment="CENTER">
                      <font>
                         <Font size="16.0" />
                      </font>
