@@ -30,4 +30,10 @@ public class LoginController extends MenuBarController{
 
 		}
 	}
+	
+	@FXML
+	private void toRegister() {
+		App.switchScene("register");
+	}
+	
 }
