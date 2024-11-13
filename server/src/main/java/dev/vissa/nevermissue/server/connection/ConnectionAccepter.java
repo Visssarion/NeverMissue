@@ -8,7 +8,7 @@ import dev.vissa.nevermissue.shared.connection.Connection;
 
 public class ConnectionAccepter implements ConnectionFactory{
 
-	ServerSocket serverSocket;
+	private ServerSocket serverSocket;
 	
 	@Override
 	public Connection accept() {
