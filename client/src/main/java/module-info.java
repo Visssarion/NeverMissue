@@ -1,4 +1,5 @@
 module dev.vissa.nevermissue.client {
+	requires transitive javafx.graphics;
     requires javafx.controls;
     requires javafx.fxml;
 
