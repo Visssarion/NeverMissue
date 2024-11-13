@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="tone1" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.vissa.nevermissue.client.controller.TestListController">
+   <left>
+      <ScrollPane hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="250.0" styleClass="tone0" BorderPane.alignment="CENTER">
+         <content>
+            <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="250.0" spacing="16.0">
+               <children>
+                  <BorderPane maxWidth="1.7976931348623157E308" onMouseClicked="#optionClicked" prefHeight="0.0" prefWidth="250.0" styleClass="tone2">
+                     <top>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </top>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom>
+                  </BorderPane>
+                  <BorderPane maxWidth="1.7976931348623157E308" onMouseClicked="#optionClicked" prefHeight="0.0" prefWidth="250.0" styleClass="tone2">
+                     <top>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </top>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom>
+                  </BorderPane>
+                  <BorderPane maxWidth="1.7976931348623157E308" onMouseClicked="#optionClicked" prefHeight="0.0" prefWidth="250.0" styleClass="tone2">
+                     <top>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </top>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom>
+                  </BorderPane>
+                  <BorderPane maxWidth="1.7976931348623157E308" onMouseClicked="#optionClicked" prefHeight="0.0" prefWidth="250.0" styleClass="tone2">
+                     <top>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </top>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom>
+                  </BorderPane>
+                  <BorderPane maxWidth="1.7976931348623157E308" onMouseClicked="#optionClicked" prefHeight="0.0" prefWidth="250.0" styleClass="tone2">
+                     <top>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </top>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom>
+                  </BorderPane>
+                  <BorderPane maxWidth="1.7976931348623157E308" onMouseClicked="#optionClicked" prefHeight="0.0" prefWidth="250.0" styleClass="tone2">
+                     <top>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </top>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom>
+                  </BorderPane>
+                  <BorderPane maxWidth="1.7976931348623157E308" onMouseClicked="#optionClicked" prefHeight="0.0" prefWidth="250.0" styleClass="tone2">
+                     <top>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </top>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom>
+                  </BorderPane>
+                  <BorderPane maxWidth="1.7976931348623157E308" onMouseClicked="#optionClicked" prefHeight="0.0" prefWidth="250.0" styleClass="tone2">
+                     <top>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </top>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom>
+                  </BorderPane>
+                  <BorderPane maxWidth="1.7976931348623157E308" onMouseClicked="#optionClicked" prefHeight="0.0" prefWidth="250.0" styleClass="tone2">
+                     <top>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </top>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom>
+                  </BorderPane>
+                  <BorderPane maxWidth="1.7976931348623157E308" onMouseClicked="#optionClicked" prefHeight="0.0" prefWidth="250.0" styleClass="tone2">
+                     <top>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </top>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom>
+                  </BorderPane>
+                  <BorderPane maxWidth="1.7976931348623157E308" onMouseClicked="#optionClicked" prefHeight="0.0" prefWidth="250.0" styleClass="tone2">
+                     <top>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </top>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom>
+                  </BorderPane>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </left>
+</BorderPane>

@@ -23,6 +23,7 @@ public class RegisterController extends MenuBarController{
 	private void register() {
 		boolean success = true; // TODO, DB connection
 		String login = loginField.getText();
+		System.out.println(login);
 		String password = passwordField.getText();
 		String passwordRepeat = passwordFieldRepeat.getText();
 		
@@ -33,13 +34,13 @@ public class RegisterController extends MenuBarController{
 			return;
 		}
 		
-//		if (success) {
-//			App.switchScene("primary");
-//		}
-//		else {
-//			errorField.setText("Неправильный логин или пароль.");
-//
-//		}
+		if (success) {
+			App.switchScene("primary");
+		}
+		else {
+			errorField.setText("Неправильный логин или пароль.");
+
+		}
 	}
 	
 	@FXML

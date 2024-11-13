@@ -2,6 +2,10 @@
     -fx-base: #e2dcda;
 }
 
+.tone0 {
+	-fx-base: #e2dcda;
+}
+
 .tone1 {
 	-fx-background-color: #dbd3d1;
 }
@@ -12,4 +16,8 @@
 
 .error {
 	-fx-text-fill: #DD2222;
+}
+
+.coolgradient{
+	-fx-background-color: linear-gradient(to bottom, #dbd3d1, #d4cac8);
 }

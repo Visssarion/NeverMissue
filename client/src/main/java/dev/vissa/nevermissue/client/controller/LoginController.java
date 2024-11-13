@@ -22,6 +22,7 @@ public class LoginController extends MenuBarController{
 		boolean success = true; // TODO, DB connection
 		String login = loginField.getText();
 		String password = passwordField.getText();
+		System.out.println(login + " " + password);
 		if (success) {
 			App.switchScene("primary");
 		}
