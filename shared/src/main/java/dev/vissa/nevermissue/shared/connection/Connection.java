@@ -1,35 +1,26 @@
 package dev.vissa.nevermissue.shared.connection;
 
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 
 public class Connection {
 	private Socket socket;
-	private ObjectInputStream ois;
-	private ObjectOutputStream oos;
+	private InputStreamReader isr;
+	private OutputStreamWriter osw;
 	
 
 	public Connection(Socket socket) throws IOException {
 		this.socket = socket;
-		ois = new ObjectInputStream(socket.getInputStream());
-		oos = new ObjectOutputStream(socket.getOutputStream());
+		isr = new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8);
+		osw = new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8);
 	}
 
 
 	public Socket getSocket() {
 		return socket;
-	}
-
-
-	public ObjectInputStream getObjectInputStream() {
-		return ois;
-	}
-
-
-	public ObjectOutputStream getObjectOutputStream() {
-		return oos;
 	}
 	
 	public boolean isConnected() {
@@ -43,8 +34,15 @@ public class Connection {
 	public boolean isBound() {
 		return socket.isBound();
 	}
-	
-	
-	
+
+
+	public InputStreamReader getIsr() {
+		return isr;
+	}
+
+
+	public OutputStreamWriter getOsw() {
+		return osw;
+	}
 	
 }
