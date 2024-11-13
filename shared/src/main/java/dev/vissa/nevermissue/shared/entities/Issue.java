@@ -1,34 +1,53 @@
 package dev.vissa.nevermissue.shared.entities;
 
+import java.util.List;
+
+import dev.vissa.nevermissue.shared.gson.annotations.BidirectionalClass;
+import dev.vissa.nevermissue.shared.gson.annotations.BidirectionalField;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
-
+@BidirectionalClass
 @Entity
+@Table(name = "Issues")
 public class Issue {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "issueID")
-	private Integer ID;
-	//@Column(name = "projectID")
-	private Integer projectID;
+	private Integer id;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "projectID")
+	@BidirectionalField
+	private Project project;
 	@Column(name = "displayName")
 	private String name;
 	@Column(name = "displayDescription")
 	private String description;
-	/*
-	private List<Task> tasks;*/
-	
-	public Issue(String name, String description) {
-		this.name = name;
-		this.description = description;
+	@OneToMany(mappedBy = "issue", fetch = FetchType.LAZY)
+	private List<Task> task;
+	@ManyToMany(mappedBy = "issues", fetch = FetchType.LAZY)
+	private List<Label> labels;
+	public Integer getId() {
+		return id;
 	}
-	public Issue() {
+	public void setId(Integer id) {
+		this.id = id;
 	}
-	
+	public Project getProject() {
+		return project;
+	}
+	public void setProject(Project project) {
+		this.project = project;
+	}
 	public String getName() {
 		return name;
 	}
@@ -41,27 +60,17 @@ public class Issue {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	/*
-	public List<Task> getTasks() {
-		return tasks;
+	public List<Task> getTask() {
+		return task;
 	}
-	public void setTasks(List<Task> tasks) {
-		this.tasks = tasks;
+	public void setTask(List<Task> task) {
+		this.task = task;
 	}
-	*/
-	public Integer getID() {
-		return ID;
+	public List<Label> getLabels() {
+		return labels;
 	}
-	public void setID(Integer iD) {
-		ID = iD;
+	public void setLabels(List<Label> labels) {
+		this.labels = labels;
 	}
-	public Integer getProjectID() {
-		return projectID;
-	}
-	public void setProjectID(Integer projectID) {
-		this.projectID = projectID;
-	}
-	
-	
 	
 }

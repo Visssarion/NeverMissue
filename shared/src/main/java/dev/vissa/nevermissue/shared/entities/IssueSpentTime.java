@@ -1,5 +1,7 @@
 package dev.vissa.nevermissue.shared.entities;
 
+import java.sql.Timestamp;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -11,18 +13,25 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Tasks")
-public class Task {
+@Table(name = "IssueSpentTime")
+public class IssueSpentTime {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "taskID")
+	@Column(name = "spentTimeID")
 	private Integer id;
-	@Column(name = "displayDescription")
-	private String description;
-	//private String name;
-	//private Integer priority;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "userID")
+	private User user;
+	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "issueID")
 	private Issue issue;
+	@Column(name = "atTime")
+	private Timestamp atTime;
+	@Column(name = "spentTime")
+	private Float spentTime;
 	
+	
+
 }
