@@ -1,5 +1,28 @@
 package dev.vissa.nevermissue.server.threads;
 
-public class ThreadManager {
+import java.util.ArrayList;
+import java.util.List;
 
+public class ThreadManager {
+	private List<ConnectionThread> threads = new ArrayList<ConnectionThread>();
+	private List<ConnectionThread> threadsQueuedForDeletion = new ArrayList<ConnectionThread>();
+
+	
+	public void add(ConnectionThread thread) {
+		threads.add(thread);
+	}
+	
+	public void check() {
+		for(ConnectionThread thread: threads) {
+			if(! thread.isConnected()) {
+				thread.interrupt();
+				threadsQueuedForDeletion.add(thread);
+			}
+		}
+		for(ConnectionThread thread: threadsQueuedForDeletion) {
+			threads.remove(thread);
+		}
+		threadsQueuedForDeletion.clear();
+	}
+	
 }
