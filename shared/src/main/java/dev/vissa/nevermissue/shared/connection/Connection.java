@@ -6,7 +6,7 @@ import java.io.OutputStreamWriter;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 
-public class Connection {
+public class Connection implements SocketState{
 	private Socket socket;
 	private InputStreamReader isr;
 	private OutputStreamWriter osw;
@@ -23,14 +23,17 @@ public class Connection {
 		return socket;
 	}
 	
+	@Override
 	public boolean isConnected() {
 		return socket.isConnected();
 	}
 	
+	@Override
 	public boolean isClosed() {
 		return socket.isClosed();
 	}
 	
+	@Override
 	public boolean isBound() {
 		return socket.isBound();
 	}
