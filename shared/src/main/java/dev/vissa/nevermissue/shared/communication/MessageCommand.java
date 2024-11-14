@@ -31,21 +31,19 @@ public class MessageCommand<E> {
 		return new Gson().toJson(this);
 	}
 	
-	public void fromString(String s) {
+	public static <E> MessageCommand<E> fromString(String s, Class<?> clazz) {
 		MessageCommand<E> temp;
-		Type collectionType = new TypeToken<MessageCommand<E>>(){}.getType();
+		Type collectionType = TypeToken.getParameterized(MessageCommand.class, clazz).getType();
 		temp = new Gson().fromJson(s, collectionType);
-		this.action = temp.action;
-		this.argument = temp.argument;
+		return temp;
 	}
 	
-//	public static <E> MessageCommand<E> fromString(String s) {
-//		return new Gson().fromJson(s, MessageCommand.class);
-//	}
-//	
-//	public static <E> MessageCommand<E> fromReader(Reader r) {
-//		return new Gson().fromJson(r, MessageCommand.class);
-//	}
+	public static <E> MessageCommand<E> fromReader(Reader r, Class<?> clazz) {
+		MessageCommand<E> temp;
+		Type collectionType = TypeToken.getParameterized(MessageCommand.class, clazz).getType();
+		temp = new Gson().fromJson(r, collectionType);
+		return temp;
+	}
 	
 	
 	
