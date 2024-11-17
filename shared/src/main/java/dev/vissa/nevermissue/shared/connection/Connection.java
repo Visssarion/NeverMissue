@@ -1,21 +1,23 @@
 package dev.vissa.nevermissue.shared.connection;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 
 public class Connection implements SocketState{
 	private Socket socket;
-	private InputStreamReader isr;
-	private OutputStreamWriter osw;
+	private PrintWriter out;
+	private BufferedReader in;
 	
 
 	public Connection(Socket socket) throws IOException {
 		this.socket = socket;
-		isr = new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8);
-		osw = new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8);
+		in = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
+		out = new PrintWriter(socket.getOutputStream(), true, StandardCharsets.UTF_8);
 	}
 
 
@@ -38,14 +40,11 @@ public class Connection implements SocketState{
 		return socket.isBound();
 	}
 
-
-	public InputStreamReader getIsr() {
-		return isr;
-	}
-
-
-	public OutputStreamWriter getOsw() {
-		return osw;
+	public void send(String str) {
+		out.println(str);
 	}
 	
+	public String recieve() throws IOException {
+		return in.readLine();
+	}
 }
