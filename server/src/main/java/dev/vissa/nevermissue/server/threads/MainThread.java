@@ -15,6 +15,7 @@ public class MainThread {
 		Connection connection = connectionAccepter.accept();
 		ConnectionThread connectionThread = new ConnectionThread(connection);
 		threadManager.add(connectionThread);
+		connectionThread.start();
 	}
 
 

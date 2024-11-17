@@ -14,7 +14,7 @@ public class ThreadManager {
 	
 	public void check() {
 		for(ConnectionThread thread: threads) {
-			if(! thread.isConnected()) {
+			if(thread.isClosed()) {
 				thread.interrupt();
 				threadsQueuedForDeletion.add(thread);
 			}

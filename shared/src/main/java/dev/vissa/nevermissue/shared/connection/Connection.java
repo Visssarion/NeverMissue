@@ -47,4 +47,10 @@ public class Connection implements SocketState{
 	public String recieve() throws IOException {
 		return in.readLine();
 	}
+	
+	public void close() throws IOException {
+		out.close();
+		in.close();
+		socket.close();
+	}
 }
