@@ -21,6 +21,7 @@ public class ThreadManager {
 		}
 		for(ConnectionThread thread: threadsQueuedForDeletion) {
 			threads.remove(thread);
+			System.out.println("Thread disconnected");
 		}
 		threadsQueuedForDeletion.clear();
 	}
