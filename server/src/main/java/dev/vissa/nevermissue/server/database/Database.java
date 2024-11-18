@@ -31,6 +31,14 @@ public class Database {
     	sessionFactory = buildSessionFactory();
     }
     
+    /**
+     * Deprecated.
+     * <br>
+     * Opens new session. Deprecated due to not supporting multiple threads.
+     * <br>
+     * Use getCurrentSession instead
+     */
+    @Deprecated(forRemoval = false)
     public static Session openSession() {
     	return sessionFactory.openSession();
     }
