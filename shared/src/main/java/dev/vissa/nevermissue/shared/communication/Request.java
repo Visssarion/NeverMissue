@@ -35,14 +35,14 @@ public class Request<E> {
 		return new Gson().toJson(this);
 	}
 	
-	public static <E> Request<E> fromString(String s, Class<?> clazz) {
+	public static <E> Request<E> fromString(String s, Class<E> clazz) {
 		Request<E> temp;
 		Type collectionType = TypeToken.getParameterized(Request.class, clazz).getType();
 		temp = new Gson().fromJson(s, collectionType);
 		return temp;
 	}
 	
-	public static <E> Request<E> fromReader(Reader r, Class<?> clazz) {
+	public static <E> Request<E> fromReader(Reader r, Class<E> clazz) {
 		Request<E> temp;
 		Type collectionType = TypeToken.getParameterized(Request.class, clazz).getType();
 		temp = new Gson().fromJson(r, collectionType);
