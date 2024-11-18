@@ -57,7 +57,7 @@ public class DatabaseTest {
 	
 	@BeforeEach // @Before
 	public void openSession() {
-		session = Database.openSession();
+		session = Database.getCurrentSession();
 		transaction = session.beginTransaction();
 	}
 	
