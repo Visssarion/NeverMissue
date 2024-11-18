@@ -34,4 +34,8 @@ public class Database {
     public static Session openSession() {
     	return sessionFactory.openSession();
     }
+    
+    public static Session getCurrentSession() {
+    	return sessionFactory.getCurrentSession();
+    }
 }
