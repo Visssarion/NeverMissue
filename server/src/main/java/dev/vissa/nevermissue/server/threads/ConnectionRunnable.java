@@ -2,7 +2,9 @@ package dev.vissa.nevermissue.server.threads;
 
 import java.io.IOException;
 
+import dev.vissa.nevermissue.server.parsers.AuthorizationRequestParser;
 import dev.vissa.nevermissue.server.parsers.PingRequestParser;
+import dev.vissa.nevermissue.server.parsers.RegisterRequestParser;
 import dev.vissa.nevermissue.shared.communication.RequestReciever;
 import dev.vissa.nevermissue.shared.connection.Connection;
 
@@ -13,7 +15,7 @@ public class ConnectionRunnable implements Runnable {
 	@Override
 	public void run() {
 		RequestReciever requestReciever = new RequestReciever(connection);
-		requestReciever.addParser(new PingRequestParser());
+		addParsers(requestReciever);
 		boolean continuing = true;
 		while(continuing) {
 			try {
@@ -34,6 +36,10 @@ public class ConnectionRunnable implements Runnable {
 		this.connection = connection;
 	}
 
-	
+	private static void addParsers(RequestReciever requestReciever) {
+		requestReciever.addParser(new PingRequestParser());
+		requestReciever.addParser(new AuthorizationRequestParser());
+		requestReciever.addParser(new RegisterRequestParser());
+	}
 	
 }

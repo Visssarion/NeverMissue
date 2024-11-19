@@ -6,6 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.query.Query;
 
 import dev.vissa.nevermissue.server.database.Database;
+import jakarta.persistence.NoResultException;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
@@ -59,13 +60,27 @@ public class HibernateDAO<E, K> implements JpaDAO<E, K> {
 	@Override
 	public List<E> getCriteriaQueryResultList(CriteriaQuery<E> cq) {
 		TypedQuery<E> query = Database.getCurrentSession().createQuery(cq);
-		return query.getResultList();
+		List<E> result;
+		try {
+			result = query.getResultList();
+		}
+		catch(NoResultException e){
+			result = null;
+		}
+		return result;
 	}
 
 	@Override
 	public E getCriteriaQuerySigleResult(CriteriaQuery<E> cq) {
 		TypedQuery<E> query = Database.getCurrentSession().createQuery(cq);
-		return query.getSingleResult();
+		E result;
+		try {
+			result = query.getSingleResult();
+		}
+		catch(NoResultException e){
+			result = null;
+		}
+		return result;
 	}
 
 	@Override

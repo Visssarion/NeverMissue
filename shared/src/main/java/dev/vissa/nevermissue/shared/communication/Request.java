@@ -51,7 +51,8 @@ public class Request<E> {
 	
 	public enum RequestType{
 		PING,
-		
+		AUTHORIZE,
+		REGISTER
 	}
 	
 }

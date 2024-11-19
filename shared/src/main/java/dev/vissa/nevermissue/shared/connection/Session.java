@@ -1,9 +1,7 @@
-package dev.vissa.nevermissue.server.connection;
+package dev.vissa.nevermissue.shared.connection;
 
 import java.io.IOException;
 
-import dev.vissa.nevermissue.shared.connection.Connection;
-import dev.vissa.nevermissue.shared.connection.SocketState;
 import dev.vissa.nevermissue.shared.entities.User;
 
 public class Session implements SocketState{

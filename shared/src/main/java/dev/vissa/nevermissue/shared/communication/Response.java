@@ -73,6 +73,6 @@ public class Response <E> {
 		OK,
 		DENIED,
 		ERROR
-	}
+	}  
 	
 }

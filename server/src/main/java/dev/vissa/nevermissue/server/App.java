@@ -3,6 +3,7 @@ package dev.vissa.nevermissue.server;
 import java.io.IOException;
 import java.net.ServerSocket;
 
+import dev.vissa.nevermissue.server.database.Database;
 import dev.vissa.nevermissue.server.threads.MainThread;
 
 /**
@@ -20,6 +21,7 @@ public class App
 			e.printStackTrace();
 			return;
 		}
+    	Database.startup();
     	MainThread mainThread = new MainThread(serverSocket);
     	while(true) {
     		mainThread.update();

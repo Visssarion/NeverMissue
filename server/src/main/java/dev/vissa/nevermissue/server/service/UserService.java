@@ -45,9 +45,20 @@ public class UserService {
 		return user;
 	}
 	
-	public boolean registerUser(UserLogin userLogin) {
+	public User registerUser(UserLogin userLogin) {
 		User user = createFromLoginInfo(userLogin);
 		dao.save(user);
-		return true;
+		return user;
 	}
+	
+	public void deleteUser(User user) {
+		dao.delete(user);
+	}
+	
+	public User getUser(Integer id) {
+		User user = dao.get(id);
+		return user;
+	}
+	
+	
 }

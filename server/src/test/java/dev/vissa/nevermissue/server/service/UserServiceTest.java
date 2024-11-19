@@ -17,7 +17,6 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 
-import dev.vissa.nevermissue.server.dao.DAO;
 import dev.vissa.nevermissue.server.database.Database;
 import dev.vissa.nevermissue.shared.entities.User;
 import dev.vissa.nevermissue.shared.entities.UserLogin;
