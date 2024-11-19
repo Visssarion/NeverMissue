@@ -4,13 +4,15 @@ import dev.vissa.nevermissue.shared.communication.Request;
 import dev.vissa.nevermissue.shared.communication.Request.RequestType;
 import dev.vissa.nevermissue.shared.connection.Connection;
 import dev.vissa.nevermissue.shared.communication.RequestParserTyped;
+import dev.vissa.nevermissue.shared.communication.Response;
+import dev.vissa.nevermissue.shared.communication.Response.RespondResult;
 
 public class PingRequestParser extends RequestParserTyped {
 
 	@Override
 	protected void run(String data, Connection connection) {
 		Request<String> request = Request.fromString(data, String.class);
-		Request<String> repeatRequest = new Request<String>(RequestType.RESULT, request.getArgument());
+		Response<String> repeatRequest = new Response<String>(RespondResult.OK, request.getArgument());
 		connection.send(repeatRequest.toString());
 	}
 

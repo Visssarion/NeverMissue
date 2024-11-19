@@ -50,7 +50,6 @@ public class Request<E> {
 	}
 	
 	public enum RequestType{
-		RESULT,
 		PING,
 		
 	}
