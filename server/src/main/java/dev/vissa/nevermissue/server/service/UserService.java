@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import dev.vissa.nevermissue.server.authorization.PasswordHasher;
 import dev.vissa.nevermissue.server.dao.HibernateDAO;
+import dev.vissa.nevermissue.server.dao.JpaDAO;
 import dev.vissa.nevermissue.shared.entities.User;
 import dev.vissa.nevermissue.shared.entities.UserLogin;
 import jakarta.persistence.criteria.CriteriaBuilder;
@@ -11,7 +12,7 @@ import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 
 public class UserService {
-	HibernateDAO<User, Integer> dao = new HibernateDAO<User, Integer>(User.class);
+	JpaDAO<User, Integer> dao = new HibernateDAO<User, Integer>(User.class);
 	
 	/**
 	 * Returns User if UserLogin is correct, null if not.

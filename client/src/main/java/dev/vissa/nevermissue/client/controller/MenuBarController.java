@@ -1,17 +1,17 @@
 package dev.vissa.nevermissue.client.controller;
 
-import dev.vissa.nevermissue.client.App;
+import dev.vissa.nevermissue.client.JavaFXApp;
 import javafx.fxml.FXML;
 
 public class MenuBarController {
 
 	@FXML
 	private void ChangeStyleToDark() {
-		App.changeStyle(true);
+		JavaFXApp.changeStyle(true);
 	}
 	
 	@FXML
 	private void ChangeStyleToDefault() {
-		App.changeStyle(false);
+		JavaFXApp.changeStyle(false);
 	}
 }

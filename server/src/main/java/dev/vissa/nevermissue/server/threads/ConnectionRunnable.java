@@ -7,8 +7,9 @@ import dev.vissa.nevermissue.server.parsers.PingRequestParser;
 import dev.vissa.nevermissue.server.parsers.RegisterRequestParser;
 import dev.vissa.nevermissue.shared.communication.RequestReciever;
 import dev.vissa.nevermissue.shared.connection.Connection;
+import dev.vissa.nevermissue.shared.connection.SocketState;
 
-public class ConnectionRunnable implements Runnable {
+public class ConnectionRunnable implements Runnable, SocketState {
 
 	private Connection connection;
 	
@@ -40,6 +41,21 @@ public class ConnectionRunnable implements Runnable {
 		requestReciever.addParser(new PingRequestParser());
 		requestReciever.addParser(new AuthorizationRequestParser());
 		requestReciever.addParser(new RegisterRequestParser());
+	}
+
+	@Override
+	public boolean isConnected() {
+		return connection.isConnected();
+	}
+
+	@Override
+	public boolean isClosed() {
+		return connection.isClosed();
+	}
+
+	@Override
+	public boolean isBound() {
+		return connection.isBound();
 	}
 	
 }
