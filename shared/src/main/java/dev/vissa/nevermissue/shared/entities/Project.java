@@ -31,16 +31,21 @@ public class Project {
 	@Column(name = "displayDescription")
 	private String description;
 	
-	@OneToMany(mappedBy = "project", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private List<Issue> issues;
-	@OneToMany(mappedBy = "project", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private List<Label> labels;
-
 	@BidirectionalField
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "authorID")
 	private User author;	
 	
+	@BidirectionalField
+	@OneToMany(mappedBy = "project", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<Issue> issues;
+	@BidirectionalField
+	@OneToMany(mappedBy = "project", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<Label> labels;
+
+	
+	
+	@BidirectionalField
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "AllowedUsers",
 			joinColumns = {@JoinColumn(name = "projectID")},

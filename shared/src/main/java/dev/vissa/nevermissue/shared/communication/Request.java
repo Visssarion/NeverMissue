@@ -4,9 +4,14 @@ import java.io.Reader;
 import java.lang.reflect.Type;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
+import dev.vissa.nevermissue.shared.gson.BidirectionalExclusionStrategy;
+
 public class Request<E> {
+	public static final Gson gson = new GsonBuilder().setExclusionStrategies(new BidirectionalExclusionStrategy()).create();
+	
 	private RequestType action;
 	private E argument;
 	
@@ -32,7 +37,7 @@ public class Request<E> {
 
 	@Override
 	public String toString() {
-		return new Gson().toJson(this);
+		return gson.toJson(this);
 	}
 	
 	public static <E> Request<E> fromString(String s, Class<E> clazz) {

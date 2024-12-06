@@ -32,8 +32,10 @@ public class Issue {
 	private String name;
 	@Column(name = "displayDescription")
 	private String description;
+	@BidirectionalField
 	@OneToMany(mappedBy = "issue", fetch = FetchType.LAZY)
 	private List<Task> task;
+	@BidirectionalField
 	@ManyToMany(mappedBy = "issues", fetch = FetchType.LAZY)
 	private List<Label> labels;
 	public Integer getId() {

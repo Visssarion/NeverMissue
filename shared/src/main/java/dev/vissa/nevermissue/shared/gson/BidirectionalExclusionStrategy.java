@@ -1,15 +1,14 @@
 package dev.vissa.nevermissue.shared.gson;
 
-import java.lang.annotation.Annotation;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gson.ExclusionStrategy;
 import com.google.gson.FieldAttributes;
 
+import dev.vissa.nevermissue.shared.gson.annotations.BidirectionalClass;
 import dev.vissa.nevermissue.shared.gson.annotations.BidirectionalField;
 import dev.vissa.nevermissue.shared.gson.annotations.SecretField;
-import dev.vissa.nevermissue.shared.gson.annotations.BidirectionalClass;
 
 
 public class BidirectionalExclusionStrategy implements ExclusionStrategy{
@@ -26,11 +25,9 @@ public class BidirectionalExclusionStrategy implements ExclusionStrategy{
 		if(f.getAnnotation(BidirectionalField.class)!= null) {
 			for(Class<?> clazz: classes) {
 				if(clazz.equals(f.getDeclaredClass())) {
-					//System.err.println("skipped");
 					return true;
 				}
 			}
-			//System.out.println(f.getDeclaredClass());
 		}
 		System.err.println(f.getAnnotations());
 		SecretField secretAnnotation = f.getAnnotation(SecretField.class);
@@ -46,6 +43,7 @@ public class BidirectionalExclusionStrategy implements ExclusionStrategy{
 
 	@Override
 	public boolean shouldSkipClass(Class<?> clazz) {
+		
 //		try {
 //			clazz.getDeclaredMethod("test").invoke(clazz, null);
 //		} catch (NoSuchMethodException | SecurityException e) {

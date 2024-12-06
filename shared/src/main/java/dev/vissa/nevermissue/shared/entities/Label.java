@@ -2,6 +2,7 @@ package dev.vissa.nevermissue.shared.entities;
 
 import java.util.List;
 
+import dev.vissa.nevermissue.shared.gson.annotations.BidirectionalField;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -21,11 +22,13 @@ public class Label {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "labelID")
 	private Integer id;
+	@BidirectionalField
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "projectID")
 	private Project project;
 	@Column(name = "displayName", length = 64)
 	private String name;
+	@BidirectionalField
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "IssueLabels",
 			joinColumns = {@JoinColumn(name = "labelID")},

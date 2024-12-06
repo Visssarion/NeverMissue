@@ -3,6 +3,7 @@ package dev.vissa.nevermissue.shared.entities;
 import java.util.List;
 
 import dev.vissa.nevermissue.shared.gson.annotations.BidirectionalClass;
+import dev.vissa.nevermissue.shared.gson.annotations.BidirectionalField;
 import dev.vissa.nevermissue.shared.gson.annotations.SecretField;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -29,9 +30,11 @@ public class User {
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	protected List<Role> roles;
 	
+	@BidirectionalField
 	@OneToMany(mappedBy = "author", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	protected List<Project> createdProjects;
 	
+	@BidirectionalField
 	@ManyToMany(mappedBy = "allowedUsers", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	protected List<Project> allowedProjects;
 
