@@ -19,7 +19,7 @@
             root
         </property>
         <property name="hibernate.connection.password">
-            root
+            SQLButEpic1!
         </property>
         
         <property name="hibernate.current_session_context_class">thread</property>

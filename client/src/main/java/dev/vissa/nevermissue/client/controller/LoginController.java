@@ -48,7 +48,7 @@ public class LoginController extends MenuBarController{
 		}
 		
 		if (success) {
-			JavaFXApp.switchScene("primary");
+			JavaFXApp.switchScene("Projects");
 			System.out.println(response.getData());
 		}
 		else {

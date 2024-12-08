@@ -57,7 +57,7 @@ public class RegisterController extends MenuBarController{
 		}
 		
 		if (success) {
-			JavaFXApp.switchScene("primary");
+			JavaFXApp.switchScene("Projects");
 			System.out.println(response.getData());
 		}
 		else {
